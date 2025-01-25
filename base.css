@@ -1,0 +1,65 @@
+/* Layout styles */
+
+:root {
+    --primary: #213bb1;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+html {
+    &._loaded {
+        .header {
+            .btn {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: min(90ch, 100% - 24px * 2);
+    margin-inline: auto;
+}
+
+.panel {
+    padding: 24px;
+    border-radius: 12px;
+    width: min(90ch, 100%);
+    margin-block: 24px;
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.header {
+    padding-block: 32px;
+
+    h1 {
+        display: inline-block;
+        margin-block: 0;
+    }
+
+    .btn {
+        opacity: 0;
+        float: right;
+        transition: opacity .2s ease-in-out;
+    }
+}

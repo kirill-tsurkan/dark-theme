@@ -1,0 +1,49 @@
+@import url('base.css');
+
+/* Color theme styles */
+
+:root {
+    --shadow: 0 8px 48px 4px light-dark(
+        color-mix(in srgb, canvas, var(--primary) 50%),
+        transparent
+    )
+}
+
+html {
+    color-scheme: light dark;
+
+    &[data-theme="☀️"] {
+        color-scheme: light;
+    }
+
+    &[data-theme="🌑"] {
+        color-scheme: dark;
+    }
+}
+
+body {
+    background-color: color-mix(in srgb,canvas, var(--primary) 10%);
+    color: color-mix(in srgb, canvasText, var(--primary) 20%);
+}
+
+.panel {
+    background-color: light-dark(
+        var(--primary),
+        color-mix(in srgb,
+            var(--primary),
+            canvas 70%
+        )
+    );
+
+    color: light-dark(
+        var(--white),
+        color-mix(in srgb,
+            var(--primary),
+            canvasText 80%
+        )
+    );
+}
+
+.btn {
+    background-color: color-mix(in srgb, canvas, var(--black) 20%);
+}
